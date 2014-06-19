@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html ng-app="ionicApp">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+  <title>Beaukart Mobile</title>
+  <link href='http://fonts.googleapis.com/css?family=Quicksand|Nunito' rel='stylesheet' type='text/css'>
+  <link href="js/ionic.min.css" rel="stylesheet">
+  <script src="js/ionic.bundle.min.js"></script>
+  <script src="js/parse-1.2.18.min.js"></script>
+
+  <script src="js/app.js"></script> 
+
+  <style>
+     
+      .bar.bar-positive, .tabs-positive>.tabs, .tabs.tabs-positive{border-color:#6b3b24;background-color:#6b3b24;background-image:linear-gradient(0deg,#6b3b24,#6b3b24 50%,transparent 50%);color:#fff}
+      
+      body{font-family: 'Nunito', sans-serif;}
+      .box {height:300px;padding: 10px}
+      .padding{ padding:5px; }
+      .prodblk
+      {
+          width:140px;
+          float:left;
+          margin:6px;
+         
+      }
+      .prodblk a.prodlink
+      {
+          width:100%;
+          min-height:60px;
+          display:block;
+          text-align:center;
+          vertical-align:middle;
+          color:#f1c40f;
+          text-decoration:none;
+          font-size:18px;
+          padding-top:160px;
+          padding-bottom:10px;
+          border:1px solid #dddddd;
+         
+          box-shadow:1px 1px 1px #ddd;
+          
+      }
+      .prodlist
+      {
+          width:94%;
+          margin:10px auto;
+          background:rgba(189, 195, 199,0.6);
+          padding:0px;
+          
+      }
+      .basicinfo
+      {
+           width:72%;
+          margin:5px auto;
+      }
+      .clear
+      {
+          clear:both;
+      }
+      .sareesimg
+      {
+        background:#ffffff url(images/sarees1.png) no-repeat center 0px; 
+      }
+      .lengasimg
+      {
+        background:#ffffff url(images/lengas.png) no-repeat center 0px; 
+      }
+      .suitesimg
+      {
+        background:#ffffff url(images/suites.png) no-repeat center 0px; 
+      }
+      .kurtisimg
+      {
+        background:#ffffff url(images/kurtis.png) no-repeat center 0px; 
+      }
+      .bgimg
+      {
+         background:#dddddd url(images/bgimg3.png) no-repeat;  
+		 background-size:100% 100%; 
+      }
+	  .bgimg1
+      {
+         background:#dddddd url(images/bgimg4.png) no-repeat;  
+		 background-size:100% 100%; 
+      }
+      .item
+      {
+          background:rgba(236, 240, 241,0.6);
+          color:#f7f7f7;
+          border-color: #ccc;
+          font-family: 'Nunito', sans-serif;
+          font-weight:400;
+      }
+      .bar .title
+      {
+         font-family: 'Quicksand', sans-serif;
+          font-weight:400;
+          font-size:24px;
+          
+      }
+      .desc
+      {
+        font-family: 'Nunito', sans-serif;
+          font-weight:400;   
+           color:#f7f7f7;
+           font-size:15px;
+           text-align:center;
+           padding:20px;
+      }
+      .input-label
+      {
+           font-weight:400;
+          color:#f7f7f7;
+          max-width: 300px;
+      }
+      .item-divider
+      {
+          background:#bdc3c7;
+      }
+      .item-input input.textbx
+      {
+          border:2px solid #ccc !important;
+          border-radius:3px;
+          margin:0 10px;
+          background:#efefef;
+          flex: 1 0 80px;
+      }
+      .item-divider .input-label
+      {
+          width:33%;
+          text-align:left;
+          display:inline-block;
+          padding:0;
+      }
+      .button-bar .button
+      {
+           font-family: 'Nunito', sans-serif;
+          font-weight:400;  
+          font-size:14px;
+          background:none;
+          color:#ffffff;
+      }
+      .button-bar .button.select
+      {
+          background:#3498db;
+      }
+      #execdash thead th {
+    background: none repeat scroll 0 0 #2C2C2C;
+    color: #FFFFFF;
+    text-shadow: none;
+}
+#execdash tr th {
+    background-color: #DDDDDD;
+    color: #40526D;
+    font-size: 13px;
+    margin: 0 auto;
+    padding: 5px 0 5px 5px;
+}
+#execdash td
+{
+    padding:5px 10px;
+}   
+.total-item .input-label
+{
+    color:#e74c3c;
+    font-size:18px;
+}   
+.proddesc
+{
+    background:rgba(236, 240, 241,0.8)
+}
+.proddesc p
+{
+    padding:10px;
+}
+.prodthumb{
+	width:30%;
+	float:left;
+}
+.col .prodimg{
+	display:block;
+}
+.col .prodimg img{
+	max-width:100%;
+	border:2px solid #d35400;
+	box-shadow:0px 0px 1px 2px #f39c12;
+}
+.pord64{
+	width:64px;
+	float:left;
+	margin-right:10px;
+	height:64px;
+	overflow:hidden;
+}
+.pord64 img{
+	max-width:100%;
+}
+.lehengeslist .item-thumbnail-left{
+	padding-left:10px;
+}
+.proddesc h4{
+	color:#c0392b;
+	padding-left:10px;
+}
+.logo{
+	display:block;
+	margin:20px;
+}
+.explorebtn{
+	width:auto;
+	display:inline-block;
+	margin-top:10px;
+	margin-left:10px;
+	padding:10px;
+	color:#ffffff;
+	background:#2ecc71;
+	border-radius:5px;
+	text-decoration:none;
+	font-size:14px;
+}
+  </style>      
+</head>
+
+<body ng-controller="AppCtrl">
+
+  <ion-nav-bar class="nav-title-slide-ios7 bar-positive">
+    <ion-nav-back-button class="button-icon ion-arrow-left-c">
+    </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-nav-view animation="slide-left-right"></ion-nav-view>
+
+    
+  <script id="menu.html" type="text/ng-template">
+    <ion-side-menus>
+
+      <ion-side-menu side="left">
+        <ion-header-bar class="bar-positive">
+          <h1 class="title">Side Menu</h1>
+        </ion-header-bar>
+        <ion-content>
+          <ul class="list">
+            <a href="#/menu/tab/buttons" class="item" menu-toggle="left">Home</a>
+            <a href="#/menu/tab/list" class="item" menu-toggle="left">Category List</a>
+            <a href="#/menu/tab/exedash" class="item" menu-toggle="left">Store Location</a>
+            <a href="#/menu/about" class="item" menu-toggle="left">About Us</a>
+			<a href="#/menu/wedding" class="item" menu-toggle="left">Wedding</a>
+          </ul>
+        </ion-content>
+      </ion-side-menu>
+
+      <ion-side-menu-content>        
+        <ion-nav-view name="menuContent"></ion-nav-view>
+      </ion-side-menu-content>
+
+    </ion-side-menus>
+  </script>    
+    
+  <script id="tabs.html" type="text/ng-template">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button class="button-icon ion-arrow-left-c">
+        </ion-nav-back-button>
+        <ion-nav-buttons side="left">
+          <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+        </ion-nav-buttons>
+
+        <ion-nav-buttons side="right">
+          <button class="button button-icon button-clear ion-compose" ng-click="modal.show()"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+        
+    <ion-tabs class="tabs-icon-top tabs-positive">
+
+      <ion-tab title="Home" icon="ion-home" href="#/menu/tab/buttons">
+        <ion-nav-view name="buttons-tab"></ion-nav-view>
+      </ion-tab>
+
+       <ion-tab title="Categories" icon="ion-ios7-keypad" href="#/menu/tab/list">
+        <ion-nav-view name="list-tab"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="Stores" icon="ion-ios7-location" href="#/menu/tab/exedash">
+        <ion-nav-view name="exedash-tab"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="Promotions" icon="ion-speakerphone" href="#/menu/tab/item">
+        <ion-nav-view name="item-tab"></ion-nav-view>
+      </ion-tab>
+    </ion-tabs>
+  </script>
+
+  <script id="buttons.html" type="text/ng-template">
+    <ion-view title="Beaukart">
+      <ion-content class="padding bgimg1">
+      	
+		<p class="logo"><a href=""><img src="images/logo_img.png" /></a>
+        
+		</p>
+		<div class="clear"></div>
+		
+		<a href="#/menu/tab/list" class="explorebtn">Explore Porducts</a>
+		
+        <div class="clear"></div>
+        <p>
+       
+        </p>        
+      </ion-content>
+    </ion-view>
+  </script>
+
+  <script id="exedash.html" type="text/ng-template">
+    <ion-view title="Stores">
+      <ion-content class="padding bgimg">
+        <div class="list">
+          <div class="item item-divider">
+           <span class="input-label">Stores Gallery</span>
+          </div>
+          <ion-slide-box>
+          <ion-slide>
+            <div class="box">
+               <img src="images/spotlight5.jpg" />
+               <p>Store View</p>
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box">
+               <img src="images/images.jpg" />
+                <p>Store Inside</p>
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box">
+                <img src="images/images2.jpg" />
+                <p>Store 1st Floor</p>
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+        </div>
+         <div class="list proddesc">
+          <div class="item item-divider">
+           <span class="input-label">Contact Us</span>
+          </div>
+          <p>Beaukart<br /> Opp: Minerva Coffee shop, Himyathnagar, <br /> Hyderabad</p>
+          <p>Phone: 9848205856, 040-9966330 <br /> email: info@beaukart.com</p>
+          </div>
+
+      </ion-content>
+    </ion-view>
+  </script>
+  
+  
+  <script id="item.html" type="text/ng-template">
+    <ion-view title="Detail View">
+      <ion-content class="padding bgimg">
+        
+       <div class="list proddesc">
+          <div class="item item-divider">
+           <span class="input-label">Promotions</span>
+          </div>
+          <p>Get 30% on Sareers <span style="display:inline-block; padding:3px; border:1px solid #d35400; background:#e67e22; color:#ffffff; border-radius:3px;">Copoun Code: 2929</a></p>
+          <p>Get 20% on Salwars <span style="display:inline-block; padding:3px; border:1px solid #f39c12; background:#f1c40f; color:#ffffff; border-radius:3px;">Copoun Code: 2929</a></p>
+          <p>Get 40% on Suits <span style="display:inline-block; padding:3px; border:1px solid #c0392b; background:#e74c3c; color:#ffffff; border-radius:3px;">Copoun Code: 2929</a></p>
+          
+        </div>
+
+
+      </ion-content>
+    </ion-view>
+  </script>
+
+
+  <script id="list.html" type="text/ng-template">
+    <ion-view title="Categories">
+      <ion-content class="padding bgimg">
+         <div class="list">
+          <div class="item item-divider">
+           Sarees
+          </div> 
+      <div class="list">
+        <a name="listview" class="item item-thumbnail-left catlistimg" href="#/menu/tab/prodlis1">
+          <img src="images/prod1.png">
+          <h2>Sarees</h2>
+          <p>Descrition for categories</p>
+       </a>
+     </div>
+      <div class="list">
+        <a class="item item-thumbnail-left catlistimg" href="#/menu/tab/prodlis1">
+          <img src="images/prod2.png">
+          <h2>Lehenga</h2>
+          <p>Descrition for categories</p>
+       </a>
+     </div>
+      <div class="list">
+        <a class="item item-thumbnail-left catlistimg" href="#/menu/tab/prodlis1">
+          <img src="images/prod3.png">
+          <h2>Anarkali</h2>
+          <p>Descrition for categories</p>
+       </a>
+     </div>
+      <div class="list">
+        <a class="item item-thumbnail-left catlistimg" href="#/menu/tab/prodlis1">
+          <img src="images/prod4.png">
+          <h2>Kurti</h2>
+          <p>Descrition for categories</p>
+       </a>
+     </div>
+	 <div class="list">
+        <a class="item item-thumbnail-left catlistimg" href="#/menu/tab/prodlis1">
+          <img src="images/prod5.png">
+          <h2>Tunic</h2>
+          <p>Descrition for categories</p>
+       </a>
+     </div>
+
+
+        
+     
+
+      </ion-content>
+    </ion-view>
+  </script>
+  
+  
+  <script id="lehenges.html" type="text/ng-template">
+    <ion-view title="Lehenges">
+      <ion-content class="padding bgimg lehengeslist">
+         <div class="list ">
+          <div class="item item-divider">
+           Sarees
+          </div> 
+      <div class="list">
+        <a name="listview" class="item item-thumbnail-left" href="#/menu/tab/lehengas1">
+          <div class="pord64">
+          <img src="images/prod7.png">
+		</div> 
+          <h2>Bollywood Lehenges</h2>
+          <p>Descrition for categories</p>
+       </a>
+     </div>
+      <div class="list">
+        <a class="item item-thumbnail-left" href="#/menu/tab/lehengas1">
+		<div class="pord64">
+          <img src="images/prod9.png">
+		</div> 
+          <h2>Designer Lehenges</h2>
+          <p>Descrition for categories</p>
+       </a>
+     </div>
+      <div class="list">
+        <a class="item item-thumbnail-left" href="#/menu/tab/lehengas1">
+          <div class="pord64">
+          <img src="images/prod11.png">
+		</div> 
+          <h2>Party Wear Lehenges</h2>
+          <p>Descrition for categories</p>
+       </a>
+     </div>
+      <div class="list">
+        <a class="item item-thumbnail-left" href="#/menu/tab/lehengas1">
+          <div class="pord64">
+          <img src="images/prod13.png">
+		</div> 
+          <h2>Wedding Lehenges</h2>
+          <p>Descrition for categories</p>
+       </a>
+     </div>
+
+
+        
+     
+
+      </ion-content>
+    </ion-view>
+  </script>
+  
+  <script id="salwars.html" type="text/ng-template">
+    <ion-view title="Salwar Suits">
+      <ion-content class="padding bgimg lehengeslist">
+         <div class="list ">
+          <div class="item item-divider">
+           Sarees
+          </div> 
+      <div class="list">
+        <a name="listview" class="item item-thumbnail-left" href="#/menu/tab/salwars1">
+          <div class="pord64">
+          <img src="images/prod15.jpg">
+		</div> 
+          <h2>Anarkali Salwar Suits</h2>
+          <p>Descrition for categories</p>
+       </a>
+     </div>
+      <div class="list">
+        <a class="item item-thumbnail-left" href="#/menu/tab/salwars1">
+		<div class="pord64">
+          <img src="images/prod17.jpg">
+		</div> 
+          <h2>Casual Wear Salwar Suits</h2>
+          <p>Descrition for categories</p>
+       </a>
+     </div>
+      <div class="list">
+        <a class="item item-thumbnail-left" href="#/menu/tab/salwars1">
+          <div class="pord64">
+          <img src="images/prod19.jpg">
+		</div> 
+          <h2>Bollywood Style Suits</h2>
+          <p>Descrition for categories</p>
+       </a>
+     </div>
+      
+
+      </ion-content>
+    </ion-view>
+  </script>
+
+  <script id="prodlis.html" type="text/ng-template">
+    <ion-view title="Products List">
+      <ion-content class="padding bgimg">
+        <div>
+			 <ul>
+				<li ng-repeat="user in users"> {{user.username}} </li>
+			</ul>
+		</div>
+        
+      </ion-content>
+    </ion-view>
+  </script>
+  
+  
+  <script id="prodlis1.html" type="text/ng-template">
+    <ion-view title="Products List">
+      <ion-content class="padding bgimg">
+	  <div class="row">
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod1"><img src="images/prod1.png" /></a></div>
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod1"><img src="images/prod2.png" /></a></div>
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod1"><img src="images/prod3.png" /></a></div>
+	  </div>
+	  <div class="row">
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod2"><img src="images/prod4.png" /></a></div>
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod2"><img src="images/prod5.png" /></a></div>
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod2"><img src="images/prod6.png" /></a></div>
+	  </div>
+	  <div class="row">
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod1"><img src="images/prod1.png" /></a></div>
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod1"><img src="images/prod2.png" /></a></div>
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod1"><img src="images/prod3.png" /></a></div>
+	  </div>
+	     
+      </ion-content>
+    </ion-view>
+  </script>
+  
+  
+  <script id="lehengas1.html" type="text/ng-template">
+    <ion-view title="Products List">
+      <ion-content class="padding bgimg">
+	  <div class="row">
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod3"><img src="images/prod7.png" /></a></div>
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod3"><img src="images/prod9.png" /></a></div>
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod5"><img src="images/prod11.png" /></a></div>
+	  </div>
+	  <div class="row">
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod4"><img src="images/prod13.png" /></a></div>
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod3"><img src="images/prod7.png" /></a></div>
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod4"><img src="images/prod9.png" /></a></div>
+	  </div>
+	 
+      </ion-content>
+    </ion-view>
+  </script>
+  <script id="salwars1.html" type="text/ng-template">
+    <ion-view title="Products List">
+      <ion-content class="padding bgimg">
+	  <div class="row">
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod6"><img src="images/prod15.jpg" /></a></div>
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod7"><img src="images/prod17.jpg" /></a></div>
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod7"><img src="images/prod19.jpg" /></a></div>
+	  </div>
+	  <div class="row">
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod6"><img src="images/prod16.jpg" /></a></div>
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod7"><img src="images/prod18.jpg" /></a></div>
+		  <div class="col"><a class="prodimg"  href="#/menu/tab/prod7"><img src="images/prod19.jpg" /></a></div>
+	  </div>
+	 
+      </ion-content>
+    </ion-view>
+  </script>
+  
+  
+  <script id="prod1.html" type="text/ng-template">
+    <ion-view>
+      <ion-header-bar class="bar-positive">
+          <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+          <h1 class="title">India Ka Sanskriti Wala Style</h1>
+      </ion-header-bar>
+      
+      <ion-content class="padding bgimg">
+        <ion-slide-box>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod1.png" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod2.png" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod3.png" />
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+        <div class="list proddesc">
+          <div class="item item-divider">
+            <span class="input-label">Product Description</span>
+          </div>
+          <p>Fabric-Chiffon Unstiched Anarkali Suit, Stichable upto size 42</p>
+          <p>Dupatta: 2.5meters Top: 54 inches Bottom: 2meters</p>
+          <p><button class="button button-balanced">
+             Order Now!
+          </button></p>
+
+        </div>
+
+       </ion-content>    
+    </ion-view>
+  </script>  
+  
+  <script id="prod2.html" type="text/ng-template">
+    <ion-view>
+      <ion-header-bar class="bar-positive">
+          <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+          <h1 class="title">Vivacious pink lehenga choli</h1>
+      </ion-header-bar>
+      
+      <ion-content class="padding bgimg">
+        <ion-slide-box>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod4.png" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box">
+               <img src="images/prod5.png" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box">
+               <img src="images/prod6.png" />
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+        <div class="list proddesc">
+          <div class="item item-divider">
+            <span class="input-label">Product Description</span>
+          </div>
+          <p>Fabric-Chiffon Unstiched Anarkali Suit, Stichable upto size 42</p>
+          <p>Dupatta: 2.5meters Top: 54 inches Bottom: 2meters</p>
+          <p><button class="button button-balanced">
+             Order Now!
+          </button></p>
+
+        </div>
+
+       </ion-content>    
+    </ion-view>
+  </script>
+  
+  
+  
+  <script id="prod3.html" type="text/ng-template">
+    <ion-view>
+      <ion-header-bar class="bar-positive">
+          <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+          <h1 class="title">Rangmanch Designer Lehenga Choli</h1>
+      </ion-header-bar>
+      
+      <ion-content class="padding bgimg">
+        <ion-slide-box>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod7.png" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod8.png" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod10.png" />
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+        <div class="list proddesc">
+          <div class="item item-divider">
+            <span class="input-label">Product Description</span>
+          </div>
+          <p>Georgette shaded Lehenga with Velvet blouse + Georgette Sleevs & Georgette Duppatta(With sentone inner)</p>
+		  <h4>INR6,471.00</h4>
+          <p><button class="button button-balanced">
+             Order Now!
+          </button></p>
+
+        </div>
+
+       </ion-content>    
+    </ion-view>
+  </script>
+  
+  
+  <script id="prod4.html" type="text/ng-template">
+    <ion-view>
+      <ion-header-bar class="bar-positive">
+          <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+          <h1 class="title">Classy gold color lehenga choli</h1>
+      </ion-header-bar>
+      
+      <ion-content class="padding bgimg">
+        <ion-slide-box>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod11.png" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod12.png" />
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+        <div class="list proddesc">
+          <div class="item item-divider">
+            <span class="input-label">Product Description</span>
+          </div>
+          <p>Ravishing Attire To Enhance Your Beauty. Steal The Hearts Away With This Gold Color Net & Satin Lehnga Choli. The Patch Work, Resham & Velvet Patch Work On Attire Personifies The Entire Appearance.</p>
+		  <h4> INR13,999.00 </h4>
+          <p><button class="button button-balanced">
+             Order Now!
+          </button></p>
+
+        </div>
+
+       </ion-content>    
+    </ion-view>
+  </script>
+  
+  <script id="prod5.html" type="text/ng-template">
+    <ion-view>
+      <ion-header-bar class="bar-positive">
+          <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+          <h1 class="title">Adorable bige brown net lehenga choli</h1>
+      </ion-header-bar>
+      
+      <ion-content class="padding bgimg">
+        <ion-slide-box>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod13.png" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod14.png" />
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+        <div class="list proddesc">
+          <div class="item item-divider">
+            <span class="input-label">Product Description</span>
+          </div>
+		  <p><strong>Adorable bige brown net lehenga choli</strong></p>
+          <p>Sensible Colors & Excellent Designs And Romantic Moods Are Reflected With An Alluring Style. An Outstanding Bige Brown Net Lehnga Choli Will Make You Look Very Stylish And Graceful. This Attire Is Showing Some Really Mesmerizing And Innovative Patterns Embroidered With Bead, Embroidery, Lace, Resham & Stones Work.</p>
+		  <h4> INR9,800.00 </h4>
+          <p><button class="button button-balanced">
+             Order Now!
+          </button></p>
+
+        </div>
+
+       </ion-content>    
+    </ion-view>
+  </script>
+  
+  
+   <script id="prod6.html" type="text/ng-template">
+    <ion-view>
+      <ion-header-bar class="bar-positive">
+          <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+          <h1 class="title">Black Designer Sandhya Anarkali Suits</h1>
+      </ion-header-bar>
+      
+      <ion-content class="padding bgimg">
+        <ion-slide-box>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod15.jpg" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod16.jpg" />
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+        <div class="list proddesc">
+          <div class="item item-divider">
+            <span class="input-label">Product Description</span>
+          </div>
+		  <p><strong>Black Designer Sandhya Anarkali Suits</strong></p>
+          <p>Sensible Colors & Excellent Designs And Romantic Moods Are Reflected With An Alluring Style. An Outstanding Bige Brown Net Lehnga Choli Will Make You Look Very Stylish And Graceful. This Attire Is Showing Some Really Mesmerizing And Innovative Patterns Embroidered With Bead, Embroidery, Lace, Resham & Stones Work.</p>
+		  <h4>INR1,638.00</h4>
+          <p><button class="button button-balanced">
+             Order Now!
+          </button></p>
+
+        </div>
+
+       </ion-content>    
+    </ion-view>
+  </script>
+  
+  
+   <script id="prod7.html" type="text/ng-template">
+    <ion-view>
+      <ion-header-bar class="bar-positive">
+          <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+          <h1 class="title">Yellow AV DESIGNER SUITS</h1>
+      </ion-header-bar>
+      
+      <ion-content class="padding bgimg">
+        <ion-slide-box>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod17.jpg" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box">
+                <img src="images/prod18.jpg" />
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+        <div class="list proddesc">
+          <div class="item item-divider">
+            <span class="input-label">Product Description</span>
+          </div>
+		  <p><strong>Yellow AV DESIGNER SUITS</strong></p>
+          <p>Sensible Colors & Excellent Designs And Romantic Moods Are Reflected With An Alluring Style. An Outstanding Bige Brown Net Lehnga Choli Will Make You Look Very Stylish And Graceful. This Attire Is Showing Some Really Mesmerizing And Innovative Patterns Embroidered With Bead, Embroidery, Lace, Resham & Stones Work.</p>
+		  <h4> INR2,238.00</h4>
+          <p><button class="button button-balanced">
+             Order Now!
+          </button></p>
+
+        </div>
+
+       </ion-content>    
+    </ion-view>
+  </script>
+  
+  
+  <script id="slidebox.html" type="text/ng-template">
+    <ion-view>
+      <ion-header-bar class="bar-positive">
+          <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+          <h1 class="title">Slide Box</h1>
+      </ion-header-bar>
+      
+      <ion-content class="padding bgimg">
+        <ion-slide-box>
+          <ion-slide>
+            <div class="box">
+                <h2>Box #1</h2>
+                <p>Content goes here</p>
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box">
+                <h2>Box #2</h2>
+                <p>Content goes here</p>
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box">
+                <h2>Box #3</h2>
+                <p>Content goes here</p>
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+        <div class="list proddesc">
+          <div class="item item-divider">
+            <span class="input-label">Product Description</span>
+          </div>
+          <p>Fabric-Chiffon Unstiched Anarkali Suit, Stichable upto size 42</p>
+          <p>Dupatta: 2.5meters Top: 54 inches Bottom: 2meters</p>
+          <p><button class="button button-balanced">
+             Order Now!
+          </button></p>
+
+        </div>
+
+       </ion-content>    
+    </ion-view>
+  </script>   
+
+  <script id="keyboard.html" type="text/ng-template">
+    <ion-view>
+      <ion-header-bar class="bar-positive">
+        <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+        <h1 class="title">Keyboard Input</h1>
+      </ion-header-bar>
+      
+      <ion-content class="padding">
+        <div class="list">        
+          <label class="item item-divider">
+            Input types for popup keyboard
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Text</span>
+            <input type="text" ng-model="user.username">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Password</span>
+            <input type="password" ng-model="user.password">
+          </label>          
+          <label class="item item-input">
+            <span class="input-label">Email</span>
+            <input type="email">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Tel</span>
+            <input type="tel">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Number</span>
+            <input type="number">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Date</span>
+            <input type="date">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Month</span>
+            <input type="month">
+          </label> 
+        </div>
+      </ion-content>
+    </ion-view>
+  </script>     
+    
+  <script id="about.html" type="text/ng-template">
+    <ion-view>
+      <ion-header-bar class="bar-positive">
+        <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+        <h1 class="title">About</h1>
+      </ion-header-bar>
+      
+      <ion-content class="padding bgimg">
+          <div class="list proddesc padding">
+            <h3>VARUNA JITHESH <br /> Founder and Chief Creative Officer.</h3>
+			<p><img src="images/Varuna-Jithesh-recent3.jpg" width="260" /></p>
+             <p>Taking  fashion cues from her mother&rsquo;s love for beautifully tailored dresses,  Varuna Jithesh developed a deep appreciation for luxury style and  sophisticated tailoring at a very early age. Varuna is still positioned  at the helm of this rapidly growing, Indian fashion house as  its founder, co-chairman and chief creative officer. She is married, has  one child and resides in Hyderabad,India.</p>
+  <p>She completed B.S( Apparel Fashion Design) from NIFT-TEA in 2005.</p>
+          </div>    
+        </ion-content>
+    </ion-view>
+  </script>
+  <script id="wedding.html" type="text/ng-template">
+    <ion-view>
+      <ion-header-bar class="bar-positive">
+        <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+        <h1 class="title">Wedding</h1>
+      </ion-header-bar>
+      
+      <ion-content class="padding bgimg">
+          <div class="list proddesc padding">
+            <h3>Wedding</h3>
+            <p>We  can create a unique piece just for you, with custom cuts &amp;  fittings. You&rsquo;ll have a complete outfit that&rsquo;s actually made to fit your  body perfectly. We help women explore new looks by providing personal,  professional style advice. We aim to help all women look and feel great  in the clothes they wear, better than anyone else.</p>
+  <p>Learn about your body shape and how you can create your best look through choosing the right clothes, color and accessories.</p>
+  <p><strong>Day 1:</strong> Interview on phone (20-minutes at most)<br />
+    1. Color(s) Preference(s):<br />
+    2. Pattern/theme preference:<br />
+    3. Material(s) Preference(s):<br />
+    4. Body shape analysis:<br />
+    <strong>Day 2-3:</strong> Sketches based on Interview (Provided 2-3 differing options)<br />
+    <strong>Day 4:</strong> Discuss Sketches. Get Final approval on sketch/design.<br />
+    <strong>Day 4/5:</strong> Take measurements (hips, chest, arms, shoulder, neck, waist etc )<br />
+    <strong>Day 5:</strong> Work on Design, Procurement &amp; stitching. </p>
+  <p>Contact us at info@varunajithesh.com</p>
+          </div>    
+        </ion-content>
+    </ion-view>
+  </script>    
+
+  <script id="modal.html" type="text/ng-template">
+    <div class="modal">
+      <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title">Modal</h1>
+        <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+      </ion-header-bar>
+      
+      <ion-content class="padding">
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label">To</span>
+            <input type="text">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Message</span>
+            <textarea rows="4"></textarea>
+          </label>
+        </div>
+        <button class="button icon icon-right ion-arrow-right-c button-balanced button-block">Send</button>
+      </ion-content>
+    </div>
+  </script>  
+      
+</body>
+</html>
