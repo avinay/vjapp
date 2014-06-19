@@ -3,14 +3,14 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "com.phonegap.beaukart"
         versionCode = "10" 
-        version     = "1.1.1" >
+        version     = "1.0.0" >
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Beaukart</name>
+    <name>Varuna Jitesh</name>
 
     <description>
-       Beaukart Mobile Application for catelouge
+       Varuna Jitesh Mobile Application for catelouge
     </description>
 
     <author href="https://beaukart.com" email="info@beaukart.com">
